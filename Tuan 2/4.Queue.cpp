@@ -17,11 +17,6 @@ public:
     Queue() : front(nullptr), rear(nullptr) {}
     
     ~Queue() {
-        while (front != nullptr) {
-            Node* temp = front;
-            front = front->next;
-            delete temp;
-        }
     }
     
     bool isEmpty() const {
@@ -65,17 +60,17 @@ public:
 };
 
 int main() {
-    Queue queue;
+    Queue *queue = new Queue;
     
-    queue.enqueue(10);
-    queue.enqueue(20);
-    queue.enqueue(30);
+    queue->enqueue(10);
+    queue->enqueue(20);
+    queue->enqueue(30);
     
-    cout << "Front element: " << queue.getFront() << endl;
+    cout << "Front element: " << queue->getFront() << endl;
     
-    queue.dequeue();
+    queue->dequeue();
     
-    cout << "Front element after dequeue: " << queue.getFront() << endl;
+    cout << "Front element after dequeue: " << queue->getFront() << endl;
     
     return 0;
 }

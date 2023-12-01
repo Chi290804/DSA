@@ -32,7 +32,7 @@ public:
     int getFront() {
         if (isEmpty()){
             cout << "Empty";
-            return;
+            return -1;
         }
         return front ->data ;
     }
